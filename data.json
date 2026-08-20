@@ -1,0 +1,419 @@
+{
+ "flagship": {
+  "title": "Hyperice Normatec 3 Legs",
+  "handle": "normatec-3",
+  "price": 99980.0,
+  "compare": 120999.0,
+  "available": false,
+  "img": "https://cdn.shopify.com/s/files/1/1311/6023/products/Normatec_3_800x.jpg",
+  "vendor": "Hyperice",
+  "img2": "https://cdn.shopify.com/s/files/1/1311/6023/products/Normatec_3_1400x.jpg"
+ },
+ "therabody": [
+  {
+   "title": "Therabody Theragun Pro Plus Handheld Massage Gun with Near-Infrared Light Therapy",
+   "handle": "theragun-pro-plus",
+   "price": 58499.0,
+   "compare": 59990.0,
+   "available": true,
+   "img": "https://cdn.shopify.com/s/files/1/1311/6023/files/Theragun_pro_plus_800x.webp",
+   "vendor": "Therabody"
+  },
+  {
+   "title": "Therabody Theragun Sense 2nd Gen Percussion Massage Gun",
+   "handle": "therabody-theragun-sense-2ng-gen-0",
+   "price": 29990.0,
+   "compare": null,
+   "available": true,
+   "img": "https://cdn.shopify.com/s/files/1/1311/6023/files/thergaunsense_800x.png",
+   "vendor": "Therabody"
+  },
+  {
+   "title": "Therabody Theragun Prime 6th Gen Deep Tissue Massage Gun",
+   "handle": "theragun-prime-6th-gen",
+   "price": 31999.0,
+   "compare": null,
+   "available": true,
+   "img": "https://cdn.shopify.com/s/files/1/1311/6023/files/Untitled-1_973ebbf3-5dd4-4455-8c17-750e3a14eb5c_800x.png",
+   "vendor": "Therabody"
+  },
+  {
+   "title": "Therabody JetBoots PRO Plus \u2014 Wireless Compression Boots with Vibration & Infrared LED",
+   "handle": "therabody-jetboots-pro-plus",
+   "price": 119999.0,
+   "compare": null,
+   "available": true,
+   "img": "https://cdn.shopify.com/s/files/1/1311/6023/files/Untitled-5_d852dd74-dc2d-4e3a-9b52-9a9a87506393_800x.png",
+   "vendor": "Therabody"
+  },
+  {
+   "title": "Therabody JetBoots Prime Compression Recovery Boots",
+   "handle": "therabody-jetboots-prime",
+   "price": 54999.0,
+   "compare": null,
+   "available": true,
+   "img": "https://cdn.shopify.com/s/files/1/1311/6023/files/11_78cea531-6258-41fb-bf38-5eb3f8649009_800x.png",
+   "vendor": "Therabody"
+  },
+  {
+   "title": "Therabody RecoveryTherm Cube",
+   "handle": "therabody-recoverytherm-cube",
+   "price": 16999.0,
+   "compare": 21999.0,
+   "available": true,
+   "img": "https://cdn.shopify.com/s/files/1/1311/6023/files/7_800x.png",
+   "vendor": "Therabody"
+  }
+ ],
+ "hyperice": [
+  {
+   "title": "Hyperice Normatec 3 Legs",
+   "handle": "normatec-3",
+   "price": 99980.0,
+   "compare": 120999.0,
+   "available": false,
+   "img": "https://cdn.shopify.com/s/files/1/1311/6023/products/Normatec_3_800x.jpg",
+   "vendor": "Hyperice"
+  },
+  {
+   "title": "Hyperice NormaTec 3 Full Body Compression Recovery System",
+   "handle": "normatec-3-full-body",
+   "price": 162990.0,
+   "compare": 172997.0,
+   "available": true,
+   "img": "https://cdn.shopify.com/s/files/1/1311/6023/products/normatec-3-full-body-wodarmour-1_800x.jpg",
+   "vendor": "Hyperice"
+  },
+  {
+   "title": "Normatec Elite Legs",
+   "handle": "normatec-premier-legs-elite",
+   "price": 128990.0,
+   "compare": 149990.0,
+   "available": true,
+   "img": "https://cdn.shopify.com/s/files/1/1311/6023/files/2_ac8d343f-5fcb-4c11-a13d-5369069327db_800x.png",
+   "vendor": "Hyperice"
+  },
+  {
+   "title": "Hyperice Normatec Elite Hips Dynamic Air Compression Device",
+   "handle": "normatec-elite-hips",
+   "price": 64990.0,
+   "compare": 75990.0,
+   "available": true,
+   "img": "https://cdn.shopify.com/s/files/1/1311/6023/files/normatec-elite-hips-1_800x.png",
+   "vendor": "Hyperice"
+  },
+  {
+   "title": "Hyperice Hypervolt 3 Percussion Massage Gun",
+   "handle": "hyperice-hypervolt-3-percussion-massage-gun",
+   "price": 24999.0,
+   "compare": 30999.0,
+   "available": true,
+   "img": "https://cdn.shopify.com/s/files/1/1311/6023/files/hv3-1_800x.png",
+   "vendor": "Hyperice"
+  },
+  {
+   "title": "Hyperice Hypervolt 3 Pro Percussion Massage Gun",
+   "handle": "hypervolt-3-pro",
+   "price": 35999.0,
+   "compare": null,
+   "available": true,
+   "img": "https://cdn.shopify.com/s/files/1/1311/6023/files/hypervolt-3-pro-01_800x.jpg",
+   "vendor": "Hyperice"
+  }
+ ],
+ "concept2": [
+  {
+   "title": "Concept 2 RowErg",
+   "handle": "concept-2-rowerg",
+   "price": 164990.0,
+   "compare": 180000.0,
+   "available": false,
+   "img": "https://cdn.shopify.com/s/files/1/1311/6023/files/concept-2-rowerg-wodarmour-1_800x.jpg",
+   "vendor": "wodarmour"
+  },
+  {
+   "title": "Concept 2 SkiErg",
+   "handle": "concept-2-skierg",
+   "price": 155000.0,
+   "compare": null,
+   "available": true,
+   "img": "https://cdn.shopify.com/s/files/1/1311/6023/files/concept-2-skierg-wodarmour-1_800x.jpg",
+   "vendor": "Concept 2"
+  },
+  {
+   "title": "Concept 2 BikeErg",
+   "handle": "concept-2-bikeerg",
+   "price": 184999.0,
+   "compare": 195000.0,
+   "available": false,
+   "img": "https://cdn.shopify.com/s/files/1/1311/6023/files/concept-2-bikeerg-wodarmour-1_800x.jpg",
+   "vendor": "Concept 2"
+  },
+  {
+   "title": "Concept 2 Rowerg Model Tall Legs",
+   "handle": "concept-2-rower-model-tall-legs",
+   "price": 174990.0,
+   "compare": 175000.0,
+   "available": false,
+   "img": "https://cdn.shopify.com/s/files/1/1311/6023/files/concept-2-rowerg-model-tall-legs-wodarmour-1_800x.jpg",
+   "vendor": "Concept 2"
+  },
+  {
+   "title": "Concept 2 Strength ERG",
+   "handle": "concept-2-strength-erg",
+   "price": 249990.0,
+   "compare": 285000.0,
+   "available": true,
+   "img": "https://cdn.shopify.com/s/files/1/1311/6023/files/7_9569c2e3-94c7-4f72-a1dc-ce2e72a9c532_800x.png",
+   "vendor": "Concept 2"
+  },
+  {
+   "title": "Concept 2 Floor Stand",
+   "handle": "concept-2-floor-stand",
+   "price": 39990.0,
+   "compare": 45000.0,
+   "available": true,
+   "img": "https://cdn.shopify.com/s/files/1/1311/6023/files/c2skiergbase_800x.jpg",
+   "vendor": "wodarmour"
+  }
+ ],
+ "normatec": [
+  {
+   "title": "Hyperice Normatec 3 Legs",
+   "handle": "normatec-3",
+   "price": 99980.0,
+   "compare": 120999.0,
+   "available": false,
+   "img": "https://cdn.shopify.com/s/files/1/1311/6023/products/Normatec_3_800x.jpg",
+   "vendor": "Hyperice"
+  },
+  {
+   "title": "Hyperice NormaTec Go Portable Compression Leg Recovery",
+   "handle": "normatec-go",
+   "price": 49990.0,
+   "compare": 49999.0,
+   "available": true,
+   "img": "https://cdn.shopify.com/s/files/1/1311/6023/files/normatec-go_800x.jpg",
+   "vendor": "Hyperice"
+  },
+  {
+   "title": "Normatec Elite Legs",
+   "handle": "normatec-premier-legs-elite",
+   "price": 128990.0,
+   "compare": 149990.0,
+   "available": true,
+   "img": "https://cdn.shopify.com/s/files/1/1311/6023/files/2_ac8d343f-5fcb-4c11-a13d-5369069327db_800x.png",
+   "vendor": "Hyperice"
+  },
+  {
+   "title": "Hyperice Normatec Elite Hips Dynamic Air Compression Device",
+   "handle": "normatec-elite-hips",
+   "price": 64990.0,
+   "compare": 75990.0,
+   "available": true,
+   "img": "https://cdn.shopify.com/s/files/1/1311/6023/files/normatec-elite-hips-1_800x.png",
+   "vendor": "Hyperice"
+  }
+ ],
+ "gear": [
+  {
+   "title": "WOD Armour Stealth Grips",
+   "handle": "wod-armour-stealth-grips",
+   "price": 2299.0,
+   "compare": 2999.0,
+   "available": true,
+   "img": "https://cdn.shopify.com/s/files/1/1311/6023/files/main_8f3688f9-9d9e-45b7-8a39-4d394bf49c7a_800x.png",
+   "vendor": "wodarmour"
+  },
+  {
+   "title": "WOD Armour elbow sleeve (7MM)",
+   "handle": "wod-armour-elbow-sleeve-7mm",
+   "price": 1099.0,
+   "compare": null,
+   "available": true,
+   "img": "https://cdn.shopify.com/s/files/1/1311/6023/files/6_76bff06e-bda5-42b2-abba-87d356a8442f_800x.png",
+   "vendor": "wodarmour"
+  },
+  {
+   "title": "WOD Armour TITAN ELITE 5mm Knee Sleeves",
+   "handle": "wod-armour-titan-elite-5mm-knee-sleeves",
+   "price": 2099.0,
+   "compare": null,
+   "available": true,
+   "img": "https://cdn.shopify.com/s/files/1/1311/6023/files/3_4eb76a4c-0ead-4bcd-a3ea-414132cf0e5f_800x.png",
+   "vendor": "wodarmour"
+  },
+  {
+   "title": "WOD Armour AlphaGear 90 L",
+   "handle": "wod-armour-alphagear-90-l",
+   "price": 2399.0,
+   "compare": 3745.0,
+   "available": true,
+   "img": "https://cdn.shopify.com/s/files/1/1311/6023/files/2_514381b2-2dac-4261-bf04-ea09ad686b1a_800x.png",
+   "vendor": "wodarmour"
+  },
+  {
+   "title": "Tactical Backpack 40L",
+   "handle": "tactical-backpack",
+   "price": 2799.0,
+   "compare": 3999.0,
+   "available": true,
+   "img": "https://cdn.shopify.com/s/files/1/1311/6023/products/tactical-backpack-wodarmour-1_800x.jpg",
+   "vendor": "wodarmour"
+  },
+  {
+   "title": "WOD Armour Phantom Grip (Vegan)",
+   "handle": "wod-armour-phantom-grip-vegan",
+   "price": 1899.0,
+   "compare": 3999.0,
+   "available": true,
+   "img": "https://cdn.shopify.com/s/files/1/1311/6023/files/women_1_800x.png",
+   "vendor": "wodarmour"
+  },
+  {
+   "title": "WOD Armour V force Freedom Grips (White)",
+   "handle": "wod-armour-v-force-freedom-grips-white",
+   "price": 2299.0,
+   "compare": 2599.0,
+   "available": true,
+   "img": "https://cdn.shopify.com/s/files/1/1311/6023/files/8_9b75a447-d6c2-4f71-8cd2-cb0816967be0_800x.png",
+   "vendor": "wodarmour"
+  },
+  {
+   "title": "WOD Armour Elbow Sleeves 5mm",
+   "handle": "wod-armour-elbow-sleeve",
+   "price": 899.0,
+   "compare": null,
+   "available": true,
+   "img": "https://cdn.shopify.com/s/files/1/1311/6023/files/6_76bff06e-bda5-42b2-abba-87d356a8442f_800x.png",
+   "vendor": "wodarmour"
+  }
+ ],
+ "goals": {
+  "legs": {
+   "title": "Hyperice Normatec 3 Legs",
+   "handle": "normatec-3",
+   "price": 99980.0,
+   "compare": 120999.0,
+   "available": false,
+   "img": "https://cdn.shopify.com/s/files/1/1311/6023/products/Normatec_3_800x.jpg",
+   "vendor": "Hyperice"
+  },
+  "soreness": {
+   "title": "Therabody Theragun Pro Plus Handheld Massage Gun with Near-Infrared Light Therapy",
+   "handle": "theragun-pro-plus",
+   "price": 58499.0,
+   "compare": 59990.0,
+   "available": true,
+   "img": "https://cdn.shopify.com/s/files/1/1311/6023/files/Theragun_pro_plus_800x.webp",
+   "vendor": "Therabody"
+  },
+  "thermal": [
+   {
+    "title": "Therabody RecoveryTherm Cube",
+    "handle": "therabody-recoverytherm-cube",
+    "price": 16999.0,
+    "compare": 21999.0,
+    "available": true,
+    "img": "https://cdn.shopify.com/s/files/1/1311/6023/files/7_800x.png",
+    "vendor": "Therabody"
+   }
+  ],
+  "measure": {
+   "title": "Concept 2 RowErg",
+   "handle": "concept-2-rowerg",
+   "price": 164990.0,
+   "compare": 180000.0,
+   "available": false,
+   "img": "https://cdn.shopify.com/s/files/1/1311/6023/files/concept-2-rowerg-wodarmour-1_800x.jpg",
+   "vendor": "wodarmour"
+  }
+ },
+ "polar": [
+  {
+   "title": "Polar H10 Heart Rate Sensor",
+   "handle": "polar-h10-heart-rate-sensor",
+   "price": 8999.0,
+   "compare": null,
+   "available": true,
+   "img": "https://cdn.shopify.com/s/files/1/1311/6023/files/red-4-s_800x.webp",
+   "vendor": "Polar"
+  },
+  {
+   "title": "Polar Loop Screen-Free Fitness Band",
+   "handle": "polar-loop",
+   "price": 19990.0,
+   "compare": null,
+   "available": true,
+   "img": "https://cdn.shopify.com/s/files/1/1311/6023/files/black_main_800x.jpg",
+   "vendor": "Polar"
+  },
+  {
+   "title": "Polar H9 Heart Rate Sensor",
+   "handle": "polar-h9-heart-rate-sensor",
+   "price": 5249.0,
+   "compare": null,
+   "available": false,
+   "img": "https://cdn.shopify.com/s/files/1/1311/6023/files/h9-img3-l_800x.webp",
+   "vendor": "Polar"
+  }
+ ],
+ "blazepod": [
+  {
+   "title": "Blazepod trainer kit",
+   "handle": "blaze-pod-trainer-kit",
+   "price": 55999.0,
+   "compare": 44999.0,
+   "available": true,
+   "img": "https://cdn.shopify.com/s/files/1/1311/6023/products/blazepod-trainer-kit-wodarmour-1_800x.jpg",
+   "vendor": "wodarmour"
+  },
+  {
+   "title": "BlazePod Standard Kit \u2014 Reaction Training System",
+   "handle": "blazepod-standard-kit",
+   "price": 43999.0,
+   "compare": null,
+   "available": true,
+   "img": "https://cdn.shopify.com/s/files/1/1311/6023/products/blazepod-standard-kit-wodarmour-1_800x.jpg",
+   "vendor": "wodarmour"
+  },
+  {
+   "title": "Blazepod Functional Adapter Kit",
+   "handle": "blazepod-functional-adapter-kit",
+   "price": 3190.0,
+   "compare": null,
+   "available": true,
+   "img": "https://cdn.shopify.com/s/files/1/1311/6023/products/blazepod-functional-adapter-kit-wodarmour-1_800x.jpg",
+   "vendor": "wodarmour"
+  }
+ ],
+ "achedaway": [
+  {
+   "title": "Achedaway Cupper",
+   "handle": "achedaway-cupper",
+   "price": 13999.0,
+   "compare": 19500.0,
+   "available": false,
+   "img": "https://cdn.shopify.com/s/files/1/1311/6023/products/achedaway-cupper-smart-cupping-therapy-wodarmour-1_800x.jpg",
+   "vendor": "wodarmour"
+  },
+  {
+   "title": "Achedaway Cupper Duo",
+   "handle": "achedaway-cupper-one-pair",
+   "price": 27499.0,
+   "compare": 39500.0,
+   "available": false,
+   "img": "https://cdn.shopify.com/s/files/1/1311/6023/products/achedaway-cupper-smart-cupping-therapy-one-pair-wodarmour-1_800x.jpg",
+   "vendor": "wodarmour"
+  },
+  {
+   "title": "Achedaway Heated Muscle Scraper",
+   "handle": "achedaway-heated-muscle-scraper",
+   "price": 20999.0,
+   "compare": 29999.0,
+   "available": true,
+   "img": "https://cdn.shopify.com/s/files/1/1311/6023/files/achedaway-heated-muscle-scraper-wodarmour-1_800x.jpg",
+   "vendor": "wodarmour"
+  }
+ ]
+}
