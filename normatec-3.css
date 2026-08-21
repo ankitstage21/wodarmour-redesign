@@ -1,0 +1,132 @@
+/* Concept 3 · "Object" — one product, one continuous move */
+:root{
+  --bone:#EBEBEA;        /* sampled from the clip so the frame box is invisible */
+  --bone-2:#E2E2E0;
+  --ink:#0E0E10;
+  --mute:#78787A;
+  --hair:#D2D2CE;
+  --red:#AB2325;
+  --d:"Archivo",-apple-system,system-ui,sans-serif;
+  --b:"Inter",-apple-system,system-ui,sans-serif;
+  --pad:clamp(20px,5vw,64px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--bone);color:var(--ink);font-family:var(--b);font-size:16px;
+  line-height:1.45;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+
+/* grain — depth without texture noise being obvious */
+.grain{position:fixed;inset:0;z-index:90;pointer-events:none;opacity:.045;
+  mix-blend-mode:multiply;background-repeat:repeat;background-size:64px 64px}
+
+/* micro type */
+.mi{font-family:var(--d);font-weight:700;font-size:.6rem;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--mute)}
+.idx{font-family:var(--d);font-weight:800;font-size:.62rem;letter-spacing:.16em;color:var(--mute)}
+.rule{height:1px;background:var(--hair);width:100%}
+
+/* header */
+.hd{position:fixed;inset:0 0 auto;z-index:80;display:flex;align-items:center;
+  justify-content:space-between;padding:20px var(--pad);mix-blend-mode:multiply}
+.hd img{height:20px}
+
+/* the pinned product — never leaves, never cuts */
+.stagewrap{position:relative}
+.stage{position:sticky;top:0;height:100dvh;z-index:1;pointer-events:none;overflow:hidden}
+#obj{position:absolute;left:50%;top:50%;transform-origin:center center;will-change:transform}
+.objfb{position:absolute;inset:0;background:center/contain no-repeat}
+
+/* acts — text that moves past the product */
+.act{position:relative;z-index:2;min-height:100dvh;display:grid;align-content:center;
+  padding:0 var(--pad);pointer-events:none}
+.act > *{pointer-events:auto}
+/* only the first act overlays the pinned stage; the rest scroll past it */
+.act[data-act="0"]{margin-top:-100dvh}
+
+/* masked type reveal */
+.mask{overflow:hidden;display:block}
+.mask > span{display:block;transform:translateY(105%);
+  transition:transform 1.05s cubic-bezier(.16,1,.3,1)}
+.in .mask > span{transform:none}
+.mask.d1 > span{transition-delay:.07s}
+.mask.d2 > span{transition-delay:.14s}
+.mask.d3 > span{transition-delay:.21s}
+
+h1,h2{font-family:var(--d);font-weight:800;letter-spacing:-.045em;line-height:.86;
+  text-transform:uppercase}
+.xxl{font-size:clamp(3rem,15vw,11rem)}
+.xl{font-size:clamp(2.2rem,9vw,6rem)}
+.lg{font-size:clamp(1.6rem,5.4vw,3.4rem)}
+.body{font-size:clamp(.95rem,1.5vw,1.06rem);color:#3C3B38;max-width:36ch}
+
+/* act layouts */
+/* headline sits low so it crosses the boots, not the product's own wordmark */
+.a-open{justify-items:center;text-align:center;align-content:end;padding-bottom:clamp(78px,13vh,132px)}
+.a-open .foot{position:absolute;left:var(--pad);right:var(--pad);bottom:26px;
+  display:flex;justify-content:space-between;align-items:end;gap:16px}
+.a-side{max-width:1280px;margin-inline:auto;width:100%}
+.a-side .col{max-width:min(430px,86vw)}
+.a-right{justify-items:end;text-align:right}
+.a-right .col{margin-left:auto}
+
+/* specs list */
+.sp{margin-top:26px;border-top:1px solid var(--hair)}
+.sp div{display:flex;justify-content:space-between;gap:20px;padding:12px 0;
+  border-bottom:1px solid var(--hair);font-size:.88rem}
+.sp b{font-family:var(--d);font-weight:800;letter-spacing:-.01em}
+.sp span{color:var(--mute)}
+
+/* buy */
+.buy{position:relative;z-index:2;background:var(--bone);padding:clamp(60px,12vh,140px) var(--pad) 0}
+.buy-in{max-width:1280px;margin-inline:auto;display:grid;
+  grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,80px);align-items:center}
+@media(max-width:880px){.buy-in{grid-template-columns:1fr;gap:32px}}
+.buy-shot{background:var(--bone);border-radius:2px;overflow:hidden;aspect-ratio:4/5}
+.buy-shot img{width:100%;height:100%;object-fit:contain}
+.price{font-family:var(--d);font-weight:800;font-size:clamp(2rem,6vw,3.2rem);
+  letter-spacing:-.045em;margin-top:20px}
+.price s{color:var(--mute);font-weight:500;font-size:.9rem;margin-left:12px;letter-spacing:0}
+.rate{display:inline-flex;align-items:center;gap:8px;margin-top:12px;font-size:.84rem;color:var(--mute)}
+.rate i{color:#B98F2C;font-style:normal;letter-spacing:1px}
+.rate b{color:var(--ink);font-family:var(--d);font-weight:800}
+.btn{display:inline-flex;align-items:center;justify-content:center;background:var(--red);
+  color:#fff;border:0;cursor:pointer;font-family:var(--d);font-weight:700;font-size:.78rem;
+  letter-spacing:.14em;text-transform:uppercase;padding:1.2em 2.6em;border-radius:2px;
+  transition:.25s cubic-bezier(.16,1,.3,1)}
+.btn:hover{background:#C22B2B;transform:translateY(-2px)}
+form.b{margin-top:26px}
+.fine{margin-top:16px;font-size:.8rem;color:var(--mute);line-height:1.6}
+.fine b{color:var(--ink);font-weight:600}
+.ftr{position:relative;z-index:2;background:var(--bone);padding:70px var(--pad) 46px;
+  display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+  border-top:1px solid var(--hair);margin-top:clamp(60px,12vh,130px)}
+
+/* sticky mobile buy */
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:85;display:flex;align-items:center;gap:12px;
+  background:rgba(232,230,225,.94);backdrop-filter:blur(12px);border-top:1px solid var(--hair);
+  padding:10px var(--pad) calc(10px + env(safe-area-inset-bottom));
+  transform:translateY(115%);transition:transform .5s cubic-bezier(.16,1,.3,1)}
+.bar.on{transform:none}
+.bar .p{font-family:var(--d);font-weight:800;font-size:.98rem;letter-spacing:-.02em}
+.bar form{margin-left:auto}
+.bar .btn{padding:.9em 1.5em;font-size:.7rem}
+@media(min-width:900px){.bar{display:none}}
+
+@media(prefers-reduced-motion:reduce){
+  .mask > span{transform:none}
+  .act[data-act="0"]{margin-top:0}
+  .stage{position:relative}
+}
+
+/* mobile: acts stack under the product rather than sitting beside it */
+@media(max-width:900px){
+  .act{align-content:end;padding-bottom:clamp(84px,14vh,140px)}
+  .a-open{padding-bottom:clamp(78px,13vh,132px)}
+  .a-right{justify-items:start;text-align:left}
+  .a-right .col{margin-left:0}
+  .a-right .body{margin-left:0 !important}
+  .body{max-width:30ch}
+  .sp{margin-top:18px}
+}
