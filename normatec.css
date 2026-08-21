@@ -46,7 +46,7 @@ h1,h2,h3{font-family:var(--display);font-weight:800;line-height:1.02;letter-spac
 @media(max-width:620px){.hdr-back{display:none}}
 
 /* 01 hero ----------------------------------------------- */
-.hero{position:relative;height:260vh;background:var(--ink)}
+.hero{position:relative;height:185vh;background:var(--ink)}
 .hero-stick{position:sticky;top:0;height:100vh;overflow:hidden}
 #nmScrub{position:absolute;inset:0;width:100%;height:100%}
 .hero-fb{position:absolute;inset:0;background:linear-gradient(180deg,#08080A,#14161A 55%,#08080A)}
@@ -271,3 +271,53 @@ h1,h2,h3{font-family:var(--display);font-weight:800;line-height:1.02;letter-spac
 .care li::before{content:"";flex:0 0 auto;width:6px;height:6px;border-radius:50%;background:var(--red);margin-top:.55em}
 .care .warn li::before{background:#B8860B}
 .care h3{font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:1.1rem;letter-spacing:.01em}
+
+/* ── buy block (real Shopify form) ─────────────────────── */
+.buy{background:var(--surface);border-bottom:1px solid var(--line)}
+.buy-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,72px);align-items:center}
+@media(max-width:900px){.buy-grid{grid-template-columns:1fr;gap:28px}}
+.buy-media{border-radius:var(--r);overflow:hidden;background:var(--surface-2);aspect-ratio:1}
+.buy-media img{width:100%;height:100%;object-fit:cover}
+.buy h1{font-size:clamp(1.7rem,3.4vw,2.7rem);text-transform:uppercase;margin:10px 0 14px}
+.buy .price-row{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin:18px 0 6px}
+.buy .price{font-family:var(--display);font-weight:800;font-size:clamp(1.8rem,3.2vw,2.5rem)}
+.buy .price-was{color:var(--text-3);text-decoration:line-through;font-size:1rem}
+.buy .price-save{color:var(--ok);font-family:var(--display);font-weight:700;font-size:.76rem;letter-spacing:.1em;text-transform:uppercase}
+.buy .stars{color:var(--text-2);margin-bottom:0}
+.buy .stars b{color:var(--text)}
+.buy .stars a{color:var(--text-2);border-bottom-color:var(--line-2)}
+.buy .stars a:hover{color:var(--text)}
+
+.buy-form{display:flex;gap:12px;align-items:stretch;margin-top:22px;flex-wrap:wrap}
+.qty{display:inline-flex;align-items:center;border:1px solid var(--line-2);border-radius:999px;overflow:hidden;background:var(--bg)}
+.qty button{width:44px;height:100%;min-height:52px;background:none;border:0;font-size:1.2rem;color:var(--text-2);cursor:pointer;transition:.2s}
+.qty button:hover{background:rgba(18,18,20,.05);color:var(--text)}
+.qty input{width:38px;text-align:center;border:0;background:none;font-family:var(--display);font-weight:800;font-size:1rem;color:var(--text);-moz-appearance:textfield}
+.qty input::-webkit-outer-spin-button,.qty input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+.buy-form .btn{flex:1;min-width:230px;min-height:52px}
+.buy-meta{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:14px;font-family:var(--display);font-weight:700;font-size:.68rem;letter-spacing:.11em;text-transform:uppercase;color:var(--text-2)}
+.buy-meta .dot{width:6px;height:6px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 3px rgba(63,130,89,.18)}
+.buy-trust{display:grid;grid-template-columns:repeat(2,1fr);gap:10px 18px;margin-top:24px;padding-top:22px;border-top:1px solid var(--line)}
+.buy-trust div{display:flex;gap:10px;align-items:flex-start;font-size:.84rem;color:var(--text-2);line-height:1.4}
+.buy-trust svg{width:17px;height:17px;stroke:var(--red);fill:none;stroke-width:1.7;flex:0 0 auto;margin-top:1px}
+@media(max-width:520px){.buy-trust{grid-template-columns:1fr}}
+
+/* compact EMI inside the buy panel */
+.emi-card.mini{max-width:none;margin-top:22px;box-shadow:none;border-color:var(--line)}
+.emi-card.mini .emi-head{padding:11px 16px}
+.emi-card.mini .emi-col{padding:18px 16px}
+.emi-card.mini h4{font-size:.95rem}
+.emi-card.mini .emi-banks{margin:13px 0 15px}
+.emi-card.mini .emi-banks i{width:29px;height:29px;font-size:.66rem}
+.emi-card.mini .emi-btn{padding:.6em 1.2em;font-size:.86rem}
+
+/* ── image strip ───────────────────────────────────────── */
+.strip{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+@media(max-width:700px){.strip{grid-template-columns:repeat(2,1fr)}}
+.strip figure{border-radius:12px;overflow:hidden;background:var(--surface-2);aspect-ratio:1}
+.strip img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.2,.7,.3,1)}
+.strip figure:hover img{transform:scale(1.05)}
+
+/* box list inside the specs section */
+.sb-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(30px,5vw,68px);align-items:start;margin-top:clamp(26px,3.5vw,44px)}
+@media(max-width:880px){.sb-grid{grid-template-columns:1fr}}

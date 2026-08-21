@@ -79,7 +79,7 @@
     const total = hero.offsetHeight - innerHeight;
     const p = total > 0 ? Math.min(1, Math.max(0, -r.top / total)) : 0;
     if (FRAMES) draw(Math.min(FRAMES - 1, Math.floor(p * (FRAMES - 1) + 1e-4)));
-    const idx = p < 0.34 ? 0 : p < 0.68 ? 1 : 2;
+    const idx = p < 0.5 ? 0 : 1;
     beats.forEach((b, i) => b.classList.toggle('on', i === idx));
   }
   const req = () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } };
@@ -133,3 +133,13 @@
     document.head.appendChild(s);
   }
 })();
+
+/* quantity steppers on the Shopify buy forms */
+document.querySelectorAll('.qty').forEach(q => {
+  const input = q.querySelector('input');
+  q.querySelectorAll('button[data-step]').forEach(b =>
+    b.addEventListener('click', () => {
+      const n = Math.max(1, (parseInt(input.value, 10) || 1) + (+b.dataset.step));
+      input.value = n;
+    }));
+});
