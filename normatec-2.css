@@ -1,0 +1,93 @@
+/* Concept 2 · "Inflate" — minimal, mobile-first */
+:root{
+  --ground:#EBEBE9;          /* sampled from the clip so the product sits on its own background */
+  --ink:#111113;
+  --mute:#6E6E73;
+  --line:#D8D8D5;
+  --red:#AB2325;
+  --display:"Archivo",-apple-system,system-ui,sans-serif;
+  --body:"Inter",-apple-system,system-ui,sans-serif;
+  --pad:clamp(22px,6vw,80px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--ground);color:var(--ink);font-family:var(--body);
+  font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1080px;margin-inline:auto;padding-inline:var(--pad)}
+
+.label{font-family:var(--display);font-weight:700;font-size:.66rem;
+  letter-spacing:.2em;text-transform:uppercase;color:var(--mute)}
+h1,h2{font-family:var(--display);font-weight:800;letter-spacing:-.035em;line-height:.98}
+
+/* header */
+.hd{position:fixed;inset:0 0 auto;z-index:50;display:flex;align-items:center;
+  justify-content:space-between;padding:22px var(--pad);pointer-events:none}
+.hd img{height:22px;pointer-events:auto}
+.hd a{pointer-events:auto}
+
+/* 01 — the inflation */
+.stage{position:relative;height:230vh}
+.stage-in{position:sticky;top:0;height:100dvh;display:grid;
+  grid-template-rows:1fr auto;align-items:center;overflow:hidden}
+#inf{width:100%;height:100%;display:block}
+.stage-fb{position:absolute;inset:0;background:var(--ground) center/contain no-repeat}
+.stage-copy{padding:0 var(--pad) clamp(30px,6vh,64px);text-align:center}
+.stage-copy h1{font-size:clamp(2rem,9vw,3.4rem);text-transform:uppercase}
+.stage-copy .label{margin-bottom:12px}
+.cue{margin-top:18px;font-family:var(--display);font-weight:700;font-size:.6rem;
+  letter-spacing:.24em;text-transform:uppercase;color:var(--mute);
+  display:flex;align-items:center;justify-content:center;gap:9px}
+.cue i{width:26px;height:1px;background:var(--line)}
+
+/* 02 — one sentence */
+.say{padding:clamp(90px,20vh,200px) 0;text-align:center}
+.say h2{font-size:clamp(1.9rem,7.2vw,4.2rem);max-width:16ch;margin-inline:auto}
+.say h2 em{font-style:normal;color:var(--red)}
+
+/* 03 — three numbers */
+.nums{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,4vw,48px);
+  padding-block:clamp(50px,10vh,110px);border-top:1px solid var(--line)}
+.nums div{text-align:center}
+.nums b{display:block;font-family:var(--display);font-weight:800;
+  font-size:clamp(1.7rem,7vw,3.4rem);letter-spacing:-.04em;line-height:1}
+.nums span{display:block;margin-top:10px;font-family:var(--display);font-weight:700;
+  font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--mute)}
+
+/* 04 — buy */
+.buy{padding-block:clamp(60px,12vh,130px);border-top:1px solid var(--line);text-align:center}
+.buy img.shot{width:min(300px,62vw);margin:0 auto clamp(26px,5vh,48px)}
+.buy h2{font-size:clamp(1.5rem,6vw,2.4rem);text-transform:uppercase}
+.buy .price{font-family:var(--display);font-weight:800;
+  font-size:clamp(1.8rem,7vw,2.6rem);letter-spacing:-.03em;margin-top:18px}
+.buy .price s{color:var(--mute);font-weight:500;font-size:.9rem;margin-left:10px}
+.rate{display:inline-flex;align-items:center;gap:8px;margin-top:14px;
+  font-size:.84rem;color:var(--mute)}
+.rate span[aria-hidden]{color:#C79A2E;letter-spacing:1px}
+.rate b{color:var(--ink);font-family:var(--display);font-weight:800}
+form.b{display:flex;gap:10px;justify-content:center;margin-top:26px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;
+  background:var(--red);color:#fff;border:0;cursor:pointer;
+  font-family:var(--display);font-weight:700;font-size:.8rem;letter-spacing:.13em;
+  text-transform:uppercase;padding:1.15em 2.4em;border-radius:999px;transition:.22s}
+.btn:hover{background:#C92A2A;transform:translateY(-2px)}
+.emi{margin-top:18px;font-size:.84rem;color:var(--mute)}
+.emi b{color:var(--ink);font-weight:600}
+.fine{margin-top:10px;font-size:.76rem;color:var(--mute)}
+.ftr{padding:40px var(--pad) 60px;text-align:center;font-size:.78rem;color:var(--mute)}
+
+/* sticky mobile buy */
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:60;display:flex;align-items:center;gap:12px;
+  background:rgba(235,235,233,.95);backdrop-filter:blur(12px);border-top:1px solid var(--line);
+  padding:11px var(--pad) calc(11px + env(safe-area-inset-bottom));
+  transform:translateY(115%);transition:transform .35s cubic-bezier(.2,.7,.3,1)}
+.bar.on{transform:none}
+.bar .p{font-family:var(--display);font-weight:800;font-size:1rem}
+.bar form{margin-left:auto}
+.bar .btn{padding:.85em 1.5em;font-size:.72rem}
+@media(min-width:900px){.bar{display:none}}
+
+@media(prefers-reduced-motion:reduce){
+  .stage{height:100dvh}.stage-in{position:relative}
+}
