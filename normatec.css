@@ -167,3 +167,13 @@ h1,h2,h3{font-family:var(--display);font-weight:800;line-height:1.02;letter-spac
   .hero{height:100vh}.hero-stick{position:relative}
   .hbeat{transition:none}.step,.zone{transition:none}
 }
+
+/* social proof + fulfilment line ------------------------- */
+.stars{display:inline-flex;align-items:center;gap:9px;margin-bottom:20px;font-size:.86rem;color:#C6C6CC}
+.stars span[aria-hidden]{color:#E7B84E;letter-spacing:1px}
+.stars b{font-family:var(--display);font-weight:800;color:#F4F2EF}
+.stars a{color:#9C9CA6;border-bottom:1px solid #3A3A42;padding-bottom:1px}
+.stars a:hover{color:#F4F2EF}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.ship-line{margin-top:18px;font-family:var(--display);font-weight:700;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:#9C9CA6}
+.close .ship-line{color:var(--text-3)}

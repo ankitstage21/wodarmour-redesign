@@ -100,11 +100,20 @@ FAQ = [
 ]
 faq = "\n".join(f'<details class="rv"><summary>{esc(q)}</summary><p>{esc(a)}</p></details>' for q, a in FAQ)
 
+# The live product page sells this as a PREORDER with a stated ship date —
+# not "out of stock". Confirmed on wodarmour.in/products/normatec-3.
+PREORDER_DATE = "30 August 2026"
 STOCK_NOTE = "" if IN_STOCK else (
-  '\n<!-- ⚠ This variant reads available:false on the live store. '
-  'Either restock before launch or wire these CTAs to a notify-me flow. -->')
+  f'\n<!-- Variant reads available:false, but the live page takes PREORDERS '
+  f'shipping {PREORDER_DATE}. CTAs reflect that. -->')
+CTA = "Add to cart" if IN_STOCK else "Pre-order now"
+SHIP_LINE = "In stock · ships within 48 working hours" if IN_STOCK else f"Pre-order · ships {PREORDER_DATE}"
 
-CTA = "Add to cart" if IN_STOCK else "Notify me when back"
+# Judge.me, read off the live product page
+RATING, NREV = "4.6", 178
+stars = ('<div class="stars"><span aria-hidden="true">★★★★★</span>'
+         f'<b>{RATING}</b><span class="sr">out of 5</span>'
+         f'<a href="{BASE}/products/{HANDLE}#judgeme_product_reviews">{NREV} reviews</a></div>')
 
 HTML = f'''<!doctype html>
 <html lang="en"><head>
@@ -142,11 +151,13 @@ HTML = f'''<!doctype html>
     <div class="hbeat" data-beat="2">
       <div class="eyebrow">Authorised Hyperice partner · 2-year India warranty</div>
       <h1>Normatec 3<br><em>Legs.</em></h1>
+      {stars}
       <div class="hero-buy">
         <span class="hero-price">{inr(PRICE)}<s>{inr(WAS)}</s></span>
         <a class="btn btn-primary" href="{BASE}/products/{esc(HANDLE)}">{CTA}</a>
         <a class="btn btn-ghost" href="#how">See how it works</a>
       </div>
+      <p class="ship-line">{SHIP_LINE} · free shipping pan-India · GST invoice</p>
     </div>
   </div>
   <div class="cue">Scroll <i></i></div>
@@ -213,10 +224,11 @@ HTML = f'''<!doctype html>
   <div class="eyebrow rv">Normatec 3 Legs</div>
   <h2 class="rv">Stop waiting<br>for your legs</h2>
   <p class="rv">Authorised Hyperice partner. Two-year India warranty. Ships from Gurugram.</p>
+  <div class="rv" style="display:flex;justify-content:center;margin-top:22px">{stars}</div>
   <div class="close-price rv">{inr(PRICE)}<s>{inr(WAS)}</s></div>
   <a class="btn btn-primary rv" href="{BASE}/products/{esc(HANDLE)}">{CTA}</a>
   <!-- VERIFY: confirm no-cost EMI is offered before this line ships -->
-  <small class="rv">Save {inr(SAVE)} · or about {inr(EMI)}/month on EMI · GST invoice included</small>
+  <small class="rv">{SHIP_LINE} · Save {inr(SAVE)} · GST invoice included</small>
 </div></section>
 
 <div class="buybar" id="buybar">
