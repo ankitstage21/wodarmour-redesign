@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Generates normatec.html — single-product landing page, real data from the live store."""
 import json, re, html
+import nm_data as D
 
 BASE = "https://wodarmour.in"
 HANDLE = "hyperice-normatec-3-legs-compression-recovery-boots-india-buy-with-2-yr-warranty"
@@ -115,6 +116,52 @@ stars = ('<div class="stars"><span aria-hidden="true">★★★★★</span>'
          f'<b>{RATING}</b><span class="sr">out of 5</span>'
          f'<a href="{BASE}/products/{HANDLE}#judgeme_product_reviews">{NREV} reviews</a></div>')
 
+
+# ── rendered fragments ────────────────────────────────────────────────
+box_html = "\n".join(f'<li><span class="q">{q}&times;</span><div><b>{esc(n)}</b><span>{esc(t)}</span></div></li>'
+                     for q, n, t in D.BOX)
+fit_html = "\n".join(f'<div class="fit-c rv"><em>{a}</em><b>{c}</b><p>{esc(t)}</p></div>'
+                     for a, c, t in D.FIT)
+
+_hdr  = "".join(f'<th class="{"me" if me else ""}">{lbl}</th>' for lbl, _, me, _ in D.COMPARE)
+_price= "".join(f'<td class="{"me" if me else ""}"><span class="price">{pr}</span></td>' for _, pr, me, _ in D.COMPARE)
+_rows = ""
+for i, r in enumerate(D.COMPARE_ROWS):
+    _cells = "".join(f'<td class="{"me" if me else ""}">{esc(f[i])}</td>' for _, _, me, f in D.COMPARE)
+    _rows += f'<tr><th scope="row">{esc(r)}</th>{_cells}</tr>'
+cmp_html = ('<table class="cmp"><thead><tr><th></th>' + _hdr + '</tr></thead><tbody><tr>'
+            '<th scope="row">Price</th>' + _price + '</tr>' + _rows + '</tbody></table>')
+
+hist_html = "".join(
+  f'<div class="hist-row"><span>{s} &#9733;</span><div class="hist-bar">'
+  f'<i style="width:{n/D.NREV*100:.1f}%"></i></div><span>{n}</span></div>' for s, n in D.HIST)
+
+rev_html = "\n".join(
+  f'<div class="rev-c rv"><div class="st">{"&#9733;"*s}{"&#9734;"*(5-s)}</div><p>{esc(t)}</p>'
+  f'<cite>{esc(w)}<em>{esc(l)}</em></cite></div>' for s, t, w, l in D.REVIEWS)
+
+care_good = "".join(f"<li>{esc(x)}</li>" for x in D.CARE_GOOD)
+care_warn = "".join(f"<li>{esc(x)}</li>" for x in D.CARE_WARN)
+faq = "\n".join(f'<details class="rv"><summary>{esc(q)}</summary><p>{esc(a)}</p></details>'
+                for q, a in D.FAQ)
+
+emi_widget = (
+  '<div class="emi-card rv">'
+  '<div class="emi-head"><b>EMI plans and Pay Later</b><i>powered by <strong>Razorpay</strong></i></div>'
+  '<div class="emi-body">'
+  '<div class="emi-col"><h4>No cost EMI starting from ' + D.EMI_FROM + '/mon</h4>'
+  '<div class="emi-banks"><i>H</i><i>A</i><i>I</i><i class="more">+' + str(D.EMI_BANKS - 3) + '</i></div>'
+  '<a class="emi-btn" href="' + BASE + '/products/' + HANDLE + '">View plans &rsaquo;</a></div>'
+  '<div class="emi-col"><h4>Pay Later available at 0% interest</h4>'
+  '<div class="emi-banks"><i>S</i></div>'
+  '<a class="emi-btn ghost" href="' + BASE + '/products/' + HANDLE + '">View options &rsaquo;</a></div>'
+  '</div></div>')
+
+GAL = [(0,"g-a","In use"),(1,"g-b","Control unit"),(4,"g-c","Build"),(3,"g-d","App control"),(5,"g-e","Normatec 3")]
+gal_html = "\n".join(
+  f'<figure class="{cls} rv"><img src="{esc(img(i))}" alt="{esc(cap)}" loading="lazy">'
+  f'<figcaption>{esc(cap)}</figcaption></figure>' for i, cls, cap in GAL)
+
 HTML = f'''<!doctype html>
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
@@ -169,7 +216,14 @@ HTML = f'''<!doctype html>
   <p class="lede rv">That's the whole argument for compression. Passive rest waits. Dynamic compression does the work — pneumatic chambers pushing in a fixed direction, ankle to hip, for as long as you set it.</p>
 </div></div></section>
 
-<!-- 03 · THE PULSE -->
+<!-- 03 · GALLERY -->
+<section class="sec"><div class="wrap">
+  <div class="eyebrow rv">The system</div>
+  <h2 class="h-sec rv" style="margin-bottom:clamp(26px,3.5vw,44px)">A pump, two sleeves,<br>and twenty minutes</h2>
+  <div class="gal">{gal_html}</div>
+</div></section>
+
+<!-- 04 · THE PULSE -->
 <section class="sec pulse" id="how"><div class="wrap">
   <div class="eyebrow rv">The mechanism</div>
   <h2 class="h-sec rv">Five zones,<br>in order, every time</h2>
@@ -198,7 +252,41 @@ HTML = f'''<!doctype html>
   </div>
 </div></div></section>
 
-<!-- 06 · WHO -->
+<!-- ⚠ PLACEHOLDER: box contents invented. Confirm with WOD Armour. -->
+<section class="sec"><div class="wrap"><div class="box-grid">
+  <div class="box-img rv"><img src="{esc(img(2))}" alt="Everything included in the box" loading="lazy"></div>
+  <div class="rv">
+    <div class="eyebrow">In the box</div>
+    <h2 class="h-sec" style="margin:10px 0 22px">Everything<br>you need</h2>
+    <ul class="box-list">{box_html}</ul>
+  </div>
+</div></div></section>
+
+<!-- ⚠ PLACEHOLDER: sizing figures invented. Confirm real fit range. -->
+<section class="sec" style="padding-top:0"><div class="wrap">
+  <div class="eyebrow rv">Will it fit</div>
+  <h2 class="h-sec rv">Check before<br>you order</h2>
+  <p class="lede rv" style="margin-top:16px">Compression only works if the sleeve sits correctly. Two lengths, and the sleeve opens flat so width is rarely the problem.</p>
+  <div class="fit">{fit_html}</div>
+</div></section>
+
+<!-- ⚠ PLACEHOLDER: feature deltas invented; prices are real. -->
+<section class="sec zb"><div class="wrap">
+  <div class="eyebrow rv">Honestly compared</div>
+  <h2 class="h-sec rv">Is this the<br>right one?</h2>
+  <p class="lede rv" style="margin-top:16px">You are going to compare these anyway. The Elite is wireless and costs ₹29,010 more — if the hose would irritate you, buy that instead. Here is the whole picture.</p>
+  <div class="cmp-wrap rv" style="margin-top:clamp(26px,3.5vw,44px)">{cmp_html}</div>
+</div></section>
+
+<!-- 06 · EMI -->
+<section class="sec"><div class="wrap">
+  <div class="eyebrow rv">Paying for it</div>
+  <h2 class="h-sec rv" style="margin-bottom:clamp(22px,3vw,36px)">Split it over<br>six months</h2>
+  {emi_widget}
+  <p class="emi-note rv">No-cost EMI and Pay Later are processed by Razorpay at checkout. Card eligibility and available tenures depend on your bank.</p>
+</div></section>
+
+<!-- 07 · WHO -->
 <section class="sec"><div class="wrap">
   <div class="eyebrow rv">Who buys one</div>
   <h2 class="h-sec rv" style="margin-bottom:clamp(28px,4vw,48px)">Not only<br>athletes</h2>
@@ -211,6 +299,32 @@ HTML = f'''<!doctype html>
   <h2 class="h-sec rv" style="margin-bottom:clamp(28px,4vw,48px)">Authorised,<br>not imported</h2>
   <div class="auth-grid">{auth}</div>
 </div></section>
+
+<!-- ⚠ PLACEHOLDER: review text invented. Rating and histogram are REAL (Judge.me). -->
+<section class="sec"><div class="wrap">
+  <div class="eyebrow rv">What buyers say</div>
+  <h2 class="h-sec rv" style="margin-bottom:clamp(28px,4vw,48px)">178 people<br>already own one</h2>
+  <div class="rev-top">
+    <div class="rev-score rv"><b>{D.RATING}</b><span class="st">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+      <span>Based on {D.NREV} verified reviews</span></div>
+    <div class="hist rv">{hist_html}</div>
+  </div>
+  <div class="rev-grid">{rev_html}</div>
+</div></section>
+
+<!-- ⚠ PLACEHOLDER: warranty, returns and contraindications invented. MEDICAL — needs sign-off. -->
+<section class="sec care"><div class="wrap"><div class="care-grid">
+  <div class="rv">
+    <div class="eyebrow">Owning it</div>
+    <h3 style="margin:10px 0 4px">Warranty &amp; returns</h3>
+    <ul>{care_good}</ul>
+  </div>
+  <div class="rv warn">
+    <div class="eyebrow">Before you start</div>
+    <h3 style="margin:10px 0 4px">When not to use it</h3>
+    <ul>{care_warn}</ul>
+  </div>
+</div></div></section>
 
 <!-- 08 · FAQ -->
 <section class="sec"><div class="wrap">
@@ -227,6 +341,7 @@ HTML = f'''<!doctype html>
   <div class="rv" style="display:flex;justify-content:center;margin-top:22px">{stars}</div>
   <div class="close-price rv">{inr(PRICE)}<s>{inr(WAS)}</s></div>
   <a class="btn btn-primary rv" href="{BASE}/products/{esc(HANDLE)}">{CTA}</a>
+  <p class="rv" style="color:#A8A8B2;font-size:.9rem;margin-top:16px">No-cost EMI from <b style="color:#F4F2EF">{D.EMI_FROM}/month</b> · Pay Later at 0%</p>
   <!-- VERIFY: confirm no-cost EMI is offered before this line ships -->
   <small class="rv">{SHIP_LINE} · Save {inr(SAVE)} · GST invoice included</small>
 </div></section>
