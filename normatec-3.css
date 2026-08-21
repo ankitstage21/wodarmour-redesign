@@ -35,7 +35,11 @@ a{color:inherit;text-decoration:none}
 /* the pinned product — never leaves, never cuts */
 .stagewrap{position:relative}
 .stage{position:sticky;top:0;height:100dvh;z-index:1;pointer-events:none;overflow:hidden}
-#obj{position:absolute;left:50%;top:50%;transform-origin:center center;will-change:transform}
+#obj{position:absolute;left:50%;top:50%;width:100%;height:100%;
+  transform-origin:center center;will-change:transform;
+  --poster-color:transparent;background:transparent;
+  --progress-bar-color:transparent;--progress-mask:transparent}
+#obj::part(default-progress-bar){display:none}
 .objfb{position:absolute;inset:0;background:center/contain no-repeat}
 
 /* acts — text that moves past the product */
