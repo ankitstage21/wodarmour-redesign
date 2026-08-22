@@ -1,10 +1,10 @@
 /* Concept 3 · "Object" — one product, one continuous move */
 :root{
-  --bone:#EBEBEA;        /* sampled from the clip so the frame box is invisible */
-  --bone-2:#E2E2E0;
+  --bone:#DBD7D2;        /* every hero frame is normalised to this exact ground */
+  --bone-2:#D2CEC8;
   --ink:#0E0E10;
   --mute:#78787A;
-  --hair:#D2D2CE;
+  --hair:#C6C1BA;
   --red:#AB2325;
   --d:"Archivo",-apple-system,system-ui,sans-serif;
   --b:"Inter",-apple-system,system-ui,sans-serif;
@@ -36,10 +36,12 @@ a{color:inherit;text-decoration:none}
 .stagewrap{position:relative}
 .stage{position:sticky;top:0;height:100dvh;z-index:1;pointer-events:none;overflow:hidden}
 #obj{position:absolute;left:50%;top:50%;width:100%;height:100%;
-  transform-origin:center center;will-change:transform;
-  --poster-color:transparent;background:transparent;
-  --progress-bar-color:transparent;--progress-mask:transparent}
-#obj::part(default-progress-bar){display:none}
+  transform-origin:center center;will-change:transform}
+.ph{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;
+  opacity:0;will-change:opacity;
+  /* dissolve the frame edge into the page ground so the product floats */
+  -webkit-mask-image:radial-gradient(96% 92% at 50% 46%,#000 52%,transparent 94%);
+  mask-image:radial-gradient(96% 92% at 50% 46%,#000 52%,transparent 94%)}
 .objfb{position:absolute;inset:0;background:center/contain no-repeat}
 
 /* acts — text that moves past the product */
